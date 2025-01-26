@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f1f1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide-content {
+    margin-top: 100px;
+}
+
+h1 {
+    background-color: #1f6a61; 
+    color: #ffffff; 
+    padding: 10px 20px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.slider {
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    border: 5px solid #1f6a61;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-images {
+    display: flex;
+    width: 600%; 
+}
+
+.slider-images img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input#slide1:checked ~ .slides .slider-images {
+    transform: translateX(0);
+}
+
+input#slide2:checked ~ .slides .slider-images {
+    transform: translateX(-100%);
+}
+
+input#slide3:checked ~ .slides .slider-images {
+    transform: translateX(-200%);
+}
+
+input#slide4:checked ~ .slides .slider-images {
+    transform: translateX(-300%);
+}
+
+input#slide5:checked ~ .slides .slider-images {
+    transform: translateX(-400%);
+}
+
+input#slide6:checked ~ .slides .slider-images {
+    transform: translateX(-500%);
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.slider-nav label {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(31, 106, 97, 0.5); 
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-nav label:hover {
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+input#slide1:checked ~ .slider-nav label[for="slide1"],
+input#slide2:checked ~ .slider-nav label[for="slide2"],
+input#slide3:checked ~ .slider-nav label[for="slide3"],
+input#slide4:checked ~ .slider-nav label[for="slide4"],
+input#slide5:checked ~ .slider-nav label[for="slide5"],
+input#slide6:checked ~ .slider-nav label[for="slide6"] {
+    background-color: #e8e8e8; 
+}
+
+
+
+    
